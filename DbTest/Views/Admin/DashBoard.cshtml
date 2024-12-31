@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DbTest.Models.Admin>
+
+@{
+    ViewData["Title"] = "Admin List";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="display-4">@ViewData["Title"]</h2>
+        <p class="text-muted"> all available Admins</p>
+    </div>
+
+    <div class="table-responsive shadow rounded">
+        <table class="table table-striped align-middle table-hover">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Email</td>
+                        <td>@product.Password</td>
+                        <td>
+                            <a asp-action="Update" asp-route-id="@product.Id" class="btn btn-warning 7">Update</a>
+                            <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-5 text-center">
+        <a asp-action="Create" class="btn btn-success btn-lg w-100">Add New Admin</a>
+    </div>
+</div>

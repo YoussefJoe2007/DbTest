@@ -1,0 +1,18 @@
+﻿<form action="@Url.Action("Check", "Admin")" method="post" class="fs text-center">
+    <h2>Welcome from Admin Page!</h2>
+
+    <div class="mb-3">
+        <label class="form-label">Email :</label>
+        <input class="form-control mx-auto custom-input" type="email" name="Email" placeholder="EX:someone@gmail.com" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password :</label>
+        <input class="form-control mx-auto custom-input" type="password" name="Password" placeholder="EX:12345678" required />
+    </div>
+
+    <div class="btn-container text-center">
+        <button class="btn btn-primary" type="submit" style="width: 70px;">Login</button>
+        <button class="btn btn-danger" type="reset" style="width: 70px;">Reset</button>
+    </div>
+</form>
